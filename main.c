@@ -10,18 +10,18 @@ int main() {
     int indices[4];
     int i, j;
 
-    // Lectura de nombres de los equipos
+    // lectura de nombres de los equipos
     for (i = 0; i < 4; i++) {
         printf("Introduce nombre del equipo %d: ", i + 1);
         scanf("%29s", equipos[i]);
-        fflush(stdin);  // limpia buffer de entrada
+        fflush(stdin);  // limpia buffer de entradash
     }
 
-    // Calculo de resultados de los 6 partidos
+    // resultados de los 6 partidos
     for (i = 0; i < 3; i++) {
         for (j = i + 1; j < 4; j++) {
             int g1, g2;
-            // Goles equipo i
+            // goles equipo i
             do {
                 printf("\nPartido: %s vs %s\n", equipos[i], equipos[j]);
                 printf("  Goles de %s: ", equipos[i]);
@@ -31,7 +31,7 @@ int main() {
                 } else break;
             } while (1);
             fflush(stdin);
-            // Goles equipo j
+            // goles equipo j
             do {
                 printf("  Goles de %s: ", equipos[j]);
                 if (scanf("%d", &g2) != 1 || g2 < 0) {
@@ -41,13 +41,13 @@ int main() {
             } while (1);
             fflush(stdin);
 
-            // Actualiza goles a favor y en contra
+            // actualiza goles a favor y en contra
             golesFavor[i] += g1;
             golesContra[i] += g2;
             golesFavor[j] += g2;
             golesContra[j] += g1;
 
-            // Asigna puntos segun resultado
+            // asigna puntos segun resultado
             if (g1 > g2) {
                 puntos[i] += 3;
             } else if (g2 > g1) {
@@ -59,13 +59,13 @@ int main() {
         }
     }
 
-    // Calcula diferencia de goles e inicializa indices
+    // calcula diferencia de goles y empieza indices
     for (i = 0; i < 4; i++) {
         diferencia[i] = golesFavor[i] - golesContra[i];
         indices[i] = i;
     }
 
-    // Ordena equipos por puntos y diferencia de goles (metodo burbuja)
+    // ordena equipos por puntos y diferencia de goles
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 3 - i; j++) {
             int a = indices[j];
@@ -79,7 +79,7 @@ int main() {
         }
     }
 
-    // Imprime tabla de posiciones
+    // imprime tabla de posiciones
     printf("\nTabla de posiciones:\n");
     printf("Equipo\t\tPuntos\tGF\tGC\tGD\n");
     for (i = 0; i < 4; i++) {
@@ -87,7 +87,7 @@ int main() {
         printf("%-10s\t%3d\t%3d\t%3d\t%3d\n", equipos[idx], puntos[idx], golesFavor[idx], golesContra[idx], diferencia[idx]);
     }
 
-    // Finalistas
+    // insanos
     printf("\nFinalistas:\n");
     printf("1. %s\n", equipos[indices[0]]);
     printf("2. %s\n", equipos[indices[1]]);
