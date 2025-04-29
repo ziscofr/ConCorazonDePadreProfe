@@ -38,10 +38,10 @@ int main() {
             printf("Ingrese goles a favor de %s: ", nombres[i]);
             fflush(stdin);
             if (scanf("%d", &valor) != 1) {
-                printf("  Entrada invalida. Debe ser un número entero.\n");
+                printf("  Entrada invalida. Debe ser un numero entero.\n");
                 valido = 0;
             } else if (valor < 0) {
-                printf("  Número invalido. No puede ser negativo.\n");
+                printf("  Numero invalido. No puede ser negativo.\n");
                 valido = 0;
             }
             fflush(stdin);
@@ -54,10 +54,10 @@ int main() {
             printf("Ingrese goles en contra de %s: ", nombres[i]);
             fflush(stdin);
             if (scanf("%d", &valor) != 1) {
-                printf("  Entrada invalida. Debe ser un número entero.\n");
+                printf("  Entrada invalida. Debe ser un numero entero.\n");
                 valido = 0;
             } else if (valor < 0) {
-                printf("  Número invalido. No puede ser negativo.\n");
+                printf("  Numero invalido. No puede ser negativo.\n");
                 valido = 0;
             }
             fflush(stdin);
